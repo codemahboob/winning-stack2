@@ -3,16 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winning Stack — 100+ Tested Products Bundle</title>
+<title>Winning Stack by Digi Ecom — 100+ Tested Products Bundle</title>
 <meta name="description" content="100+ dropshipping products already tested with real Meta ad spend. Cost, price, CPC, CPP, ROAS, audience and sourcing — for ₹499.">
 <meta name="theme-color" content="#e2321e">
-<meta property="og:title" content="Winning Stack — 100+ Tested Products Bundle">
+<meta property="og:title" content="Winning Stack by Digi Ecom — 100+ Tested Products Bundle">
 <meta property="og:description" content="100+ dropshipping products already tested with real ad spend. Cost, price, ad numbers, audience and sourcing — one payment.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23e2321e'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code — replace YOUR_PIXEL_ID below with your real pixel ID from Meta Events Manager -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel Code -->
 <style>
   :root{
     --red:#e2321e;
@@ -66,11 +82,28 @@
     color:var(--ink);font-weight:600;
     position:relative;z-index:2;
   }
-  .menu{display:flex;align-items:center;gap:9px;cursor:pointer;}
+  .menu{display:flex;align-items:center;gap:9px;cursor:pointer;background:none;border:none;padding:0;font:inherit;color:inherit;}
   .menu .bars{display:flex;flex-direction:column;gap:4px;width:18px;}
-  .menu .bars span{height:2px;background:var(--red);border-radius:2px;}
+  .menu .bars span{height:2px;background:var(--red);border-radius:2px;transition:background .15s ease;}
   .menu:hover .bars span{background:var(--ink);}
   .tag{color:var(--ink-soft);}
+
+  .menu-wrap{position:relative;z-index:20;}
+  .menu-panel{
+    position:absolute;top:calc(100% + 14px);left:0;
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 12px 32px rgba(20,19,18,0.12);
+    min-width:200px;padding:8px;
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .15s ease, transform .15s ease, visibility .15s;
+  }
+  .menu-panel.is-open{opacity:1;visibility:visible;transform:translateY(0);}
+  .menu-panel a{
+    display:block;padding:11px 14px;border-radius:9px;
+    font-family:"Inter",sans-serif;font-size:13px;color:var(--ink);
+    text-decoration:none;
+  }
+  .menu-panel a:hover{background:#f2f1ee;color:var(--red);}
 
   /* hero */
   .hero{position:relative;z-index:1;padding:var(--space-8) 0 var(--space-6);min-height:340px;}
@@ -122,12 +155,13 @@
   .down-btn:hover{background:var(--red);transform:translateY(2px);}
   .down-btn svg{width:16px;height:16px;}
 
-  /* about / bundle blurb */
+  /* about / bundle blurb — centered, big CTA */
   .about{
     position:relative;z-index:1;
-    padding:var(--space-6) 0;
+    padding:var(--space-8) 0;
     border-top:1px solid var(--line);
-    display:grid;grid-template-columns:1.1fr 0.9fr;gap:var(--space-6);
+    text-align:center;
+    display:flex;flex-direction:column;align-items:center;
   }
   .eyebrow{
     font-family:"Inter",sans-serif;font-size:11px;font-weight:700;
@@ -135,31 +169,92 @@
     margin:0 0 var(--space-1);
   }
   .about h3{
-    font-family:"Archivo Black",sans-serif;font-size:20px;
+    font-family:"Archivo Black",sans-serif;font-size:clamp(24px,4vw,34px);
     letter-spacing:-0.01em;margin:0 0 var(--space-2);
   }
-  .about p{font-size:14.5px;color:var(--ink-soft);margin:0 0 var(--space-3);line-height:1.65;max-width:420px;}
-  .price-line{
-    display:flex;align-items:baseline;gap:10px;margin-bottom:var(--space-3);
+  .about p{
+    font-size:14.5px;color:var(--ink-soft);margin:0 0 var(--space-4);
+    line-height:1.65;max-width:460px;
   }
-  .price-line s{color:#b3ada1;font-size:14px;}
-  .price-line strong{font-family:"Archivo Black",sans-serif;font-size:28px;color:var(--red);}
+  .price-line{
+    display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:var(--space-4);
+  }
+  .price-line s{color:#b3ada1;font-size:18px;}
+  .price-line strong{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,52px);color:var(--red);letter-spacing:-0.01em;}
+
+  /* premium bundle card — icon + info row, full-width dark button */
+  .bundle-card{
+    width:100%;max-width:440px;margin:0 auto;
+    background:#fff;border-radius:22px;
+    padding:28px;
+    box-shadow:0 1px 2px rgba(20,19,18,0.04), 0 12px 32px rgba(20,19,18,0.08);
+    text-align:left;
+  }
+  .card-top{display:flex;align-items:flex-start;gap:18px;margin-bottom:22px;}
+
+  .icon-tile{
+    position:relative;flex-shrink:0;
+    width:88px;height:88px;border-radius:20px;
+    background:#fbeeec;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .icon-tile svg{width:46px;height:46px;}
+  .pdf-badge-mini{
+    position:absolute;bottom:10px;right:-6px;
+    background:#fbeeec;color:var(--red);
+    font-family:"Inter",sans-serif;font-weight:700;font-size:10.5px;
+    padding:4px 8px;border-radius:8px;
+    box-shadow:0 1px 2px rgba(20,19,18,0.08);
+    letter-spacing:0.01em;
+  }
+
+  .card-info{flex:1;min-width:0;}
+  .eyebrow-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:#f2f1ee;color:var(--ink-soft);
+    font-family:"Inter",sans-serif;font-weight:700;font-size:10px;
+    letter-spacing:0.1em;text-transform:uppercase;
+    padding:6px 12px;border-radius:999px;margin-bottom:10px;
+  }
+  .eyebrow-pill svg{width:11px;height:11px;}
+  .card-title{
+    font-family:"Inter",sans-serif;font-weight:700;font-size:19px;
+    letter-spacing:-0.01em;line-height:1.25;color:var(--ink);margin:0 0 10px;
+  }
+  .card-price{display:flex;align-items:baseline;gap:10px;margin-bottom:8px;}
+  .card-price s{font-family:"Inter",sans-serif;font-weight:500;font-size:15px;color:#b5b0a6;}
+  .card-price strong{font-family:"Inter",sans-serif;font-weight:800;font-size:26px;color:var(--ink);letter-spacing:-0.01em;}
+  .card-sub{font-family:"Inter",sans-serif;font-size:12.5px;color:var(--ink-soft);}
+
   .cta{
-    display:inline-block;background:var(--ink);color:var(--paper);
-    font-weight:600;font-size:13px;letter-spacing:0.03em;
-    padding:15px 32px;border-radius:999px;text-decoration:none;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;border:none;cursor:pointer;
+    background:var(--ink);color:#fff;
+    font-family:"Inter",sans-serif;
+    font-weight:600;font-size:16px;letter-spacing:0.01em;
+    padding:17px 0;border-radius:16px;text-decoration:none;
+    box-shadow:0 1px 2px rgba(20,19,18,0.06), 0 8px 20px rgba(20,19,18,0.16);
     transition:background .18s ease, transform .18s ease;
   }
-  .cta:hover{background:var(--red);transform:translateY(-1px);}
-  .cta:focus-visible, .down-btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+  .cta svg{width:16px;height:16px;flex-shrink:0;}
+  .cta:hover{background:#000;transform:translateY(-2px);}
+  .cta:focus-visible, .down-btn:focus-visible{outline:2px solid var(--red);outline-offset:3px;}
 
-  .included{list-style:none;margin:0;padding:0;font-size:13.5px;color:var(--ink);}
-  .included li{
-    padding:12px 0;border-bottom:1px solid var(--line);
-    display:flex;justify-content:space-between;align-items:baseline;
+  .included-strip{
+    list-style:none;display:flex;flex-direction:column;gap:14px;
+    margin:36px 0 0;padding:24px 0 0;
+    border-top:1px solid var(--line);
+    max-width:400px;width:100%;
   }
-  .included li:first-child{padding-top:0;}
-  .included li span{color:var(--ink-soft);font-size:12px;}
+  .included-strip li{
+    display:flex;align-items:center;gap:12px;
+    font-family:"Inter",sans-serif;font-size:13.5px;color:var(--ink);
+    text-align:left;
+  }
+  .included-strip li svg{
+    width:19px;height:19px;flex-shrink:0;
+    color:var(--red);
+  }
 
   /* reviews */
   .reviews{
@@ -172,11 +267,21 @@
   }
   .reviews .count{font-size:11px;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;}
   .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);}
-  .review{font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
-  .review .who{
-    display:block;margin-top:var(--space-1);font-size:11px;letter-spacing:0.06em;
-    text-transform:uppercase;color:var(--ink);font-weight:600;
+  .review{
+    font-size:13.5px;color:var(--ink-soft);line-height:1.55;
+    padding:var(--space-3);background:#fff;border:1px solid var(--line);border-radius:14px;
   }
+  .review .stars{color:var(--red);font-size:13px;letter-spacing:2px;margin-bottom:var(--space-2);}
+  .review .who{
+    display:flex;align-items:center;gap:10px;margin-top:var(--space-3);
+  }
+  .review .who img{
+    width:34px;height:34px;border-radius:50%;object-fit:cover;
+    border:1px solid var(--line);
+  }
+  .review .who .meta{display:flex;flex-direction:column;line-height:1.3;}
+  .review .who .name{font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);font-weight:700;}
+  .review .who .place{font-size:11px;color:var(--ink-soft);}
 
   footer{
     position:relative;z-index:1;
@@ -192,7 +297,12 @@
     .bg-num{font-size:clamp(60px,24vw,120px);}
     .row + .row{margin-top:var(--space-4);}
     .block p{max-width:220px;}
-    .about{grid-template-columns:1fr;gap:var(--space-4);padding:var(--space-4) 0;}
+    .about{padding:var(--space-6) 0;}
+    .bundle-card{padding:22px;border-radius:20px;}
+    .icon-tile{width:72px;height:72px;border-radius:16px;}
+    .icon-tile svg{width:38px;height:38px;}
+    .card-title{font-size:17px;}
+    .card-price strong{font-size:23px;}
     .review-grid{grid-template-columns:1fr;gap:var(--space-3);}
     footer{flex-direction:column;gap:6px;align-items:flex-start;padding-bottom:var(--space-3);}
   }
@@ -207,9 +317,16 @@
 <div class="frame">
 
   <div class="topbar">
-    <div class="menu">
-      <div class="bars"><span></span><span></span><span></span></div>
-      <span>Menu</span>
+    <div class="menu-wrap">
+      <button class="menu" id="menu-toggle" aria-expanded="false" aria-controls="menu-panel">
+        <div class="bars"><span></span><span></span><span></span></div>
+        <span>Menu</span>
+      </button>
+      <nav class="menu-panel" id="menu-panel">
+        <a href="#bundle">Get Bundle</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="refund.html">Return &amp; Refund Policy</a>
+      </nav>
     </div>
     <div class="tag">Bundle Review</div>
   </div>
@@ -239,18 +356,41 @@
   </div>
 
   <div class="about" id="bundle">
-    <div>
-      <div class="eyebrow">₹499 · One Time</div>
-      <h3>The Bundle</h3>
-      <p>100+ products already tested with real ad spend — cost, selling price, CPC, CPP, ROAS, audience, and where to source it. Skip the testing budget.</p>
-      <div class="price-line"><s>₹4,999</s><strong>₹499</strong></div>
-      <a href="#" class="cta">Get the Bundle</a>
+    <div class="eyebrow">Limited Time Offer</div>
+    <h3>The Bundle</h3>
+    <p>100+ products already tested with real ad spend — cost, selling price, CPC, CPP, ROAS, audience, and where to source it. Skip the testing budget.</p>
+
+    <div class="bundle-card">
+      <div class="card-top">
+        <div class="icon-tile">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" fill="#8a2e2e"/>
+            <path d="M3 9h18" stroke="#6e2020" stroke-width="0.6"/>
+          </svg>
+          <div class="pdf-badge-mini">.PDF</div>
+        </div>
+        <div class="card-info">
+          <div class="eyebrow-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+            Digital Product
+          </div>
+          <h4 class="card-title">Winning Products Bundle</h4>
+          <div class="card-price"><s>₹3,200</s><strong>₹499</strong></div>
+          <div class="card-sub">Instant Download · Lifetime Access</div>
+        </div>
+      </div>
+      <button type="button" class="cta" id="get-bundle-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+        Get Bundle
+      </button>
+      <div id="payment-status" style="text-align:center;font-family:'Inter',sans-serif;font-size:12.5px;color:var(--ink-soft);margin-top:12px;"></div>
     </div>
-    <ul class="included">
-      <li>Products <span>100+</span></li>
-      <li>Ad Creative <span>Included</span></li>
-      <li>ROAS Range <span>2.9×–4.6×</span></li>
-      <li>Updated <span>Monthly</span></li>
+
+    <ul class="included-strip">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>100+ dropshipping products tested with real ad spend</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ready-to-run ad creative included for every product</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Proven ROAS ranging from 2.9× up to 4.6×</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fresh products added to the bundle every month</li>
     </ul>
   </div>
 
@@ -260,18 +400,116 @@
       <span class="count">4.9 / 5 · 200+ buyers</span>
     </div>
     <div class="review-grid">
-      <div class="review">"Ran two products same week, both profitable by day three."<span class="who">Rohit, Surat</span></div>
-      <div class="review">"Audience targeting actually matched what worked for me."<span class="who">Priya, Pune</span></div>
-      <div class="review">"Paid for itself 10x over in the first month."<span class="who">Kavita, Ahmedabad</span></div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p style="margin:0;">"Ran two products same week, both profitable by day three."</p>
+        <div class="who">
+          <img src="https://i.pravatar.cc/80?img=13" alt="" loading="lazy">
+          <div class="meta"><span class="name">Rohit</span><span class="place">Surat</span></div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p style="margin:0;">"Audience targeting actually matched what worked for me."</p>
+        <div class="who">
+          <img src="https://i.pravatar.cc/80?img=47" alt="" loading="lazy">
+          <div class="meta"><span class="name">Priya</span><span class="place">Pune</span></div>
+        </div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p style="margin:0;">"Paid for itself 10x over in the first month."</p>
+        <div class="who">
+          <img src="https://i.pravatar.cc/80?img=32" alt="" loading="lazy">
+          <div class="meta"><span class="name">Kavita</span><span class="place">Ahmedabad</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <footer>
-    <span>Winning Stack</span>
-    <span>Vol. 01 — 2026</span>
+    <span>Winning Stack by Digi Ecom</span>
+    <span style="display:flex;gap:16px;">
+      <a href="privacy.html" style="text-decoration:none;color:inherit;">Privacy</a>
+      <a href="refund.html" style="text-decoration:none;color:inherit;">Refund Policy</a>
+    </span>
   </footer>
 
 </div>
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  // ---- Menu dropdown ----
+  var menuToggle = document.getElementById('menu-toggle');
+  var menuPanel = document.getElementById('menu-panel');
+  menuToggle.addEventListener('click', function(e){
+    e.stopPropagation();
+    var isOpen = menuPanel.classList.toggle('is-open');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  document.addEventListener('click', function(e){
+    if (!menuPanel.contains(e.target) && e.target !== menuToggle){
+      menuPanel.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ---- Bundle price (single source of truth for pixel + Razorpay) ----
+  var BUNDLE_PRICE_INR = 499;           // ₹499
+  var BUNDLE_NAME = 'Winning Products Bundle';
+
+  // ---- Get Bundle button: InitiateCheckout + Razorpay ----
+  var getBundleBtn = document.getElementById('get-bundle-btn');
+  var statusEl = document.getElementById('payment-status');
+
+  getBundleBtn.addEventListener('click', function () {
+    // Meta Pixel: InitiateCheckout fires the moment the button is clicked
+    if (typeof fbq === 'function') {
+      fbq('track', 'InitiateCheckout', {
+        value: BUNDLE_PRICE_INR,
+        currency: 'INR',
+        content_name: BUNDLE_NAME
+      });
+    }
+
+    var options = {
+      key: 'YOUR_RAZORPAY_KEY_ID',       // replace with your live/test Key ID from Razorpay Dashboard
+      amount: BUNDLE_PRICE_INR * 100,     // Razorpay expects the amount in paise
+      currency: 'INR',
+      name: 'Digi Ecom',
+      description: BUNDLE_NAME,
+      image: '',
+      handler: function (response) {
+        // Payment succeeded — response.razorpay_payment_id is available here
+        if (typeof fbq === 'function') {
+          fbq('track', 'Purchase', {
+            value: BUNDLE_PRICE_INR,
+            currency: 'INR',
+            content_name: BUNDLE_NAME
+          });
+        }
+        statusEl.textContent = 'Payment successful — check your email for the download link.';
+        statusEl.style.color = '#1a7f37';
+      },
+      modal: {
+        ondismiss: function () {
+          statusEl.textContent = 'Checkout closed — no charge was made.';
+        }
+      },
+      theme: { color: '#e2321e' }
+    };
+
+    var rzp = new Razorpay(options);
+    rzp.on('payment.failed', function (response) {
+      statusEl.textContent = 'Payment failed. Please try again.';
+      statusEl.style.color = '#e2321e';
+    });
+    rzp.open();
+  });
+</script>
+
+
 
 </body>
 </html>
