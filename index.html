@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winning Stack — 100+ Tested Products Bundle</title>
+<meta name="description" content="100+ dropshipping products already tested with real Meta ad spend. Cost, price, CPC, CPP, ROAS, audience and sourcing — for ₹499.">
+<meta name="theme-color" content="#e2321e">
+<meta property="og:title" content="Winning Stack — 100+ Tested Products Bundle">
+<meta property="og:description" content="100+ dropshipping products already tested with real ad spend. Cost, price, ad numbers, audience and sourcing — one payment.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23e2321e'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#e2321e;
+    --paper:#f7f6f3;
+    --ink:#141312;
+    --ink-soft:#726e66;
+    --line:#e2ded2;
+    --space-1:8px;
+    --space-2:16px;
+    --space-3:24px;
+    --space-4:32px;
+    --space-6:48px;
+    --space-8:64px;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--red);
+    color:var(--ink);
+    font-family:"Inter",sans-serif;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--ink);color:var(--paper);}
+
+  .frame{
+    max-width:1040px;
+    margin:0 auto;
+    background:var(--paper);
+    padding:var(--space-4) var(--space-4) 0;
+    position:relative;
+    overflow:hidden;
+    background-image:radial-gradient(circle, #ddd8cb 1px, transparent 1px);
+    background-size:22px 22px;
+  }
+  .frame::before{
+    /* soft paper wash so the dot grid doesn't fight the content */
+    content:"";
+    position:absolute;inset:0;
+    background:var(--paper);
+    -webkit-mask-image:radial-gradient(circle at 70% 20%, transparent 0%, transparent 30%, black 75%);
+    mask-image:radial-gradient(circle at 70% 20%, transparent 0%, transparent 30%, black 75%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* top bar */
+  .topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--ink);font-weight:600;
+    position:relative;z-index:2;
+  }
+  .menu{display:flex;align-items:center;gap:9px;cursor:pointer;}
+  .menu .bars{display:flex;flex-direction:column;gap:4px;width:18px;}
+  .menu .bars span{height:2px;background:var(--red);border-radius:2px;}
+  .menu:hover .bars span{background:var(--ink);}
+  .tag{color:var(--ink-soft);}
+
+  /* hero */
+  .hero{position:relative;z-index:1;padding:var(--space-8) 0 var(--space-6);min-height:340px;}
+  .bg-num{
+    font-family:"Archivo Black",sans-serif;
+    font-size:clamp(84px,16vw,208px);
+    color:#eae7dd;
+    line-height:0.82;
+    position:absolute;
+    top:0;left:0;
+    z-index:0;
+    user-select:none;
+    letter-spacing:-0.02em;
+    white-space:nowrap;
+  }
+
+  .row{
+    display:flex;align-items:center;gap:var(--space-2);position:relative;z-index:1;
+  }
+  .row + .row{margin-top:var(--space-6);}
+  .row.right{justify-content:flex-end;text-align:right;}
+  .row.right .block{order:1;}
+  .row.right .arrow{order:2;}
+
+  .arrow{width:36px;height:2px;background:var(--red);position:relative;flex-shrink:0;}
+  .arrow::after{
+    content:"";position:absolute;right:-1px;top:-4px;
+    border-left:9px solid var(--red);border-top:5px solid transparent;border-bottom:5px solid transparent;
+  }
+  .row.right .arrow::after{left:-1px;right:auto;border-right:9px solid var(--red);border-left:none;}
+
+  .block h2{
+    font-family:"Archivo Black",sans-serif;
+    font-size:clamp(21px,3.2vw,32px);
+    margin:0 0 6px;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  .block p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.55;max-width:280px;}
+  .row.right .block p{margin-left:auto;}
+
+  .down-btn{
+    width:46px;height:46px;border-radius:50%;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;z-index:1;margin-top:var(--space-6);cursor:pointer;
+    text-decoration:none;
+    transition:background .18s ease, transform .18s ease;
+  }
+  .down-btn:hover{background:var(--red);transform:translateY(2px);}
+  .down-btn svg{width:16px;height:16px;}
+
+  /* about / bundle blurb */
+  .about{
+    position:relative;z-index:1;
+    padding:var(--space-6) 0;
+    border-top:1px solid var(--line);
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:var(--space-6);
+  }
+  .eyebrow{
+    font-family:"Inter",sans-serif;font-size:11px;font-weight:700;
+    letter-spacing:0.14em;text-transform:uppercase;color:var(--red);
+    margin:0 0 var(--space-1);
+  }
+  .about h3{
+    font-family:"Archivo Black",sans-serif;font-size:20px;
+    letter-spacing:-0.01em;margin:0 0 var(--space-2);
+  }
+  .about p{font-size:14.5px;color:var(--ink-soft);margin:0 0 var(--space-3);line-height:1.65;max-width:420px;}
+  .price-line{
+    display:flex;align-items:baseline;gap:10px;margin-bottom:var(--space-3);
+  }
+  .price-line s{color:#b3ada1;font-size:14px;}
+  .price-line strong{font-family:"Archivo Black",sans-serif;font-size:28px;color:var(--red);}
+  .cta{
+    display:inline-block;background:var(--ink);color:var(--paper);
+    font-weight:600;font-size:13px;letter-spacing:0.03em;
+    padding:15px 32px;border-radius:999px;text-decoration:none;
+    transition:background .18s ease, transform .18s ease;
+  }
+  .cta:hover{background:var(--red);transform:translateY(-1px);}
+  .cta:focus-visible, .down-btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  .included{list-style:none;margin:0;padding:0;font-size:13.5px;color:var(--ink);}
+  .included li{
+    padding:12px 0;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline;
+  }
+  .included li:first-child{padding-top:0;}
+  .included li span{color:var(--ink-soft);font-size:12px;}
+
+  /* reviews */
+  .reviews{
+    position:relative;z-index:1;padding:var(--space-6) 0 var(--space-6);border-top:1px solid var(--line);
+  }
+  .eyebrow-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:var(--space-3);}
+  .reviews h3{
+    font-family:"Archivo Black",sans-serif;font-size:14px;
+    text-transform:uppercase;letter-spacing:0.08em;margin:0;
+  }
+  .reviews .count{font-size:11px;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);}
+  .review{font-size:13.5px;color:var(--ink-soft);line-height:1.55;}
+  .review .who{
+    display:block;margin-top:var(--space-1);font-size:11px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--ink);font-weight:600;
+  }
+
+  footer{
+    position:relative;z-index:1;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:var(--space-3) 0 var(--space-4);font-size:11px;color:var(--ink-soft);
+    letter-spacing:0.08em;text-transform:uppercase;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:680px){
+    .frame{padding:var(--space-3) var(--space-3) 0;}
+    .hero{padding:var(--space-6) 0 var(--space-4);min-height:260px;}
+    .bg-num{font-size:clamp(60px,24vw,120px);}
+    .row + .row{margin-top:var(--space-4);}
+    .block p{max-width:220px;}
+    .about{grid-template-columns:1fr;gap:var(--space-4);padding:var(--space-4) 0;}
+    .review-grid{grid-template-columns:1fr;gap:var(--space-3);}
+    footer{flex-direction:column;gap:6px;align-items:flex-start;padding-bottom:var(--space-3);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <div class="topbar">
+    <div class="menu">
+      <div class="bars"><span></span><span></span><span></span></div>
+      <span>Menu</span>
+    </div>
+    <div class="tag">Bundle Review</div>
+  </div>
+
+  <div class="hero">
+    <div class="bg-num">100+</div>
+
+    <div class="row" style="margin-top:130px;">
+      <div class="arrow"></div>
+      <div class="block">
+        <h2>Winning Products</h2>
+        <p>Cost, price, ad numbers and audience for every product — Meta tested.</p>
+      </div>
+    </div>
+
+    <div class="row right">
+      <div class="block">
+        <h2>Sourcing Included</h2>
+        <p>Supplier links for every product, verified before it goes in the bundle.</p>
+      </div>
+      <div class="arrow"></div>
+    </div>
+
+    <a href="#bundle" class="down-btn" aria-label="Scroll to bundle details">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f7f6f3" stroke-width="2.5" stroke-linecap="round"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+    </a>
+  </div>
+
+  <div class="about" id="bundle">
+    <div>
+      <div class="eyebrow">₹499 · One Time</div>
+      <h3>The Bundle</h3>
+      <p>100+ products already tested with real ad spend — cost, selling price, CPC, CPP, ROAS, audience, and where to source it. Skip the testing budget.</p>
+      <div class="price-line"><s>₹4,999</s><strong>₹499</strong></div>
+      <a href="#" class="cta">Get the Bundle</a>
+    </div>
+    <ul class="included">
+      <li>Products <span>100+</span></li>
+      <li>Ad Creative <span>Included</span></li>
+      <li>ROAS Range <span>2.9×–4.6×</span></li>
+      <li>Updated <span>Monthly</span></li>
+    </ul>
+  </div>
+
+  <div class="reviews">
+    <div class="eyebrow-row">
+      <h3>Reviews</h3>
+      <span class="count">4.9 / 5 · 200+ buyers</span>
+    </div>
+    <div class="review-grid">
+      <div class="review">"Ran two products same week, both profitable by day three."<span class="who">Rohit, Surat</span></div>
+      <div class="review">"Audience targeting actually matched what worked for me."<span class="who">Priya, Pune</span></div>
+      <div class="review">"Paid for itself 10x over in the first month."<span class="who">Kavita, Ahmedabad</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Winning Stack</span>
+    <span>Vol. 01 — 2026</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
