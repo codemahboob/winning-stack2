@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Meta Pixel Code — replace YOUR_PIXEL_ID below with your real pixel ID from Meta Events Manager -->
 <script>
@@ -107,7 +107,7 @@ fbq('track', 'PageView');
   /* hero */
   .hero{position:relative;z-index:1;padding:var(--space-8) 0 var(--space-6);min-height:340px;}
   .bg-num{
-    font-family:"Archivo Black",sans-serif;
+    font-family:"Outfit",sans-serif;font-weight:800;
     font-size:clamp(84px,16vw,208px);
     color:#eae7dd;
     line-height:0.82;
@@ -135,7 +135,7 @@ fbq('track', 'PageView');
   .row.right .arrow::after{left:-1px;right:auto;border-right:9px solid var(--red);border-left:none;}
 
   .block h2{
-    font-family:"Archivo Black",sans-serif;
+    font-family:"Outfit",sans-serif;font-weight:800;
     font-size:clamp(21px,3.2vw,32px);
     margin:0 0 6px;
     line-height:1.08;
@@ -168,7 +168,7 @@ fbq('track', 'PageView');
     margin:0 0 var(--space-1);
   }
   .about h3{
-    font-family:"Archivo Black",sans-serif;font-size:clamp(24px,4vw,34px);
+    font-family:"Outfit",sans-serif;font-weight:800;font-size:clamp(24px,4vw,34px);
     letter-spacing:-0.01em;margin:0 0 var(--space-2);
   }
   .about p{
@@ -179,7 +179,7 @@ fbq('track', 'PageView');
     display:flex;align-items:baseline;justify-content:center;gap:14px;margin-bottom:var(--space-4);
   }
   .price-line s{color:#b3ada1;font-size:18px;}
-  .price-line strong{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,6vw,52px);color:var(--red);letter-spacing:-0.01em;}
+  .price-line strong{font-family:"Outfit",sans-serif;font-weight:800;font-size:clamp(36px,6vw,52px);color:var(--red);letter-spacing:-0.01em;}
 
   /* premium bundle card — icon + info row, full-width dark button */
   .bundle-card{
@@ -255,13 +255,44 @@ fbq('track', 'PageView');
     color:var(--red);
   }
 
+  /* team */
+  .team{
+    position:relative;z-index:1;
+    padding:var(--space-6) 0 var(--space-4);
+    border-top:1px solid var(--line);
+    text-align:center;
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .team h3{
+    font-family:"Outfit",sans-serif;font-weight:800;font-size:clamp(21px,3.2vw,28px);
+    letter-spacing:-0.01em;margin:0 0 var(--space-1);
+  }
+  .team > p{
+    font-size:13.5px;color:var(--ink-soft);margin:0 0 var(--space-4);
+    line-height:1.6;max-width:400px;
+  }
+  .team-grid{
+    width:100%;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-2);
+  }
+  .team-card{flex:1 1 90px;max-width:104px;text-align:center;}
+  .team-photo{
+    width:64px;height:64px;margin:0 auto 8px;aspect-ratio:1/1;border-radius:50%;overflow:hidden;
+    background:#efece4;
+  }
+  .team-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .team-name{
+    font-family:"Inter",sans-serif;font-weight:700;font-size:12.5px;
+    color:var(--ink);letter-spacing:-0.01em;margin-bottom:1px;
+  }
+  .team-role{font-family:"Inter",sans-serif;font-size:10.5px;color:var(--ink-soft);}
+
   /* reviews */
   .reviews{
     position:relative;z-index:1;padding:var(--space-6) 0 var(--space-6);border-top:1px solid var(--line);
   }
   .eyebrow-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:var(--space-3);}
   .reviews h3{
-    font-family:"Archivo Black",sans-serif;font-size:14px;
+    font-family:"Outfit",sans-serif;font-weight:800;font-size:14px;
     text-transform:uppercase;letter-spacing:0.08em;margin:0;
   }
   .reviews .count{font-size:11px;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;}
@@ -297,6 +328,9 @@ fbq('track', 'PageView');
     .row + .row{margin-top:var(--space-4);}
     .block p{max-width:220px;}
     .about{padding:var(--space-6) 0;}
+    .team{padding:var(--space-4) 0;}
+    .team-card{flex:1 1 26%;max-width:96px;}
+    .team-photo{width:56px;height:56px;}
     .bundle-card{padding:22px;border-radius:20px;}
     .icon-tile{width:72px;height:72px;border-radius:16px;}
     .icon-tile svg{width:38px;height:38px;}
@@ -393,7 +427,45 @@ fbq('track', 'PageView');
     </ul>
   </div>
 
+  <div class="team">
+    <div class="eyebrow">The People Behind It</div>
+    <h3>Meet The Team</h3>
+    <p>Testing, sourcing, and shipping — the small team running the bundle.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"><img src="https://i.pravatar.cc/300?img=11" alt="Aarav Shah" loading="lazy"></div>
+        <div class="team-name">Aarav Shah</div>
+        <div class="team-role">Founder</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://i.pravatar.cc/300?img=25" alt="Meera Nair" loading="lazy"></div>
+        <div class="team-name">Meera Nair</div>
+        <div class="team-role">Product Research</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://i.pravatar.cc/300?img=15" alt="Kabir Malhotra" loading="lazy"></div>
+        <div class="team-name">Kabir Malhotra</div>
+        <div class="team-role">Performance Ads</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://i.pravatar.cc/300?img=44" alt="Simran Kaur" loading="lazy"></div>
+        <div class="team-name">Simran Kaur</div>
+        <div class="team-role">Sourcing &amp; Logistics</div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="https://i.pravatar.cc/300?img=53" alt="Devika Rao" loading="lazy"></div>
+        <div class="team-name">Devika Rao</div>
+        <div class="team-role">Customer Support</div>
+      </div>
+    </div>
+  </div>
+
   <div class="reviews">
+    <div class="eyebrow-row">
+      <h3>Reviews</h3>
+      <span class="count">4.9 / 5 · 200+ buyers</span>
+    </div>
+     <div class="reviews">
     <div class="eyebrow-row">
       <h3>Reviews</h3>
       <span class="count">4.9 / 5 · 200+ buyers</span>
